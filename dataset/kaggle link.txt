@@ -1,0 +1,2 @@
+https://www.kaggle.com/code/riyapatel1697/phishing-email-detection-ai-ml/input?select=emails-phishing-nazario.mbox
+https://www.kaggle.com/code/muzammilrizvi1/d-tection-d-emails-de-phishing
