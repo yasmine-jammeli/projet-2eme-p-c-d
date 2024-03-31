@@ -1,2 +1,7 @@
 virtualenv venv
 .\venv\Scripts\Activate
+
+
+
+
+deactivate 
