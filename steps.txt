@@ -5,3 +5,9 @@ virtualenv venv
 
 
 deactivate 
+
+
+react 
+npm create vite@latest
+npm install
+npm run dev 
