@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.welcome-container {
+    display: flex;
+    height: 100vh;
+    background-color: #24252D;
+    color: white;
+}
+
+.left-half, .right-half{
+    flex: 1;
+    padding: 20px;
+}
+
+.left-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-half{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
+
+}
+
+
+.content p {
+    font-size: 21px; 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 400; 
+    line-height: 1.5; 
+}
+.content h1 {
+   font-family: 'Julius Sans One', sans-serif;
+   
+}
+
+
+.contact-us {
+    text-align: center;
+    margin: 0 25px;
+}
+
+
+.contact-us a {
+    color: white;
+    text-decoration: underline;
+}
+
+.welcome-message {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.create-account button, .login button {
+    background-color: #BE4A31;
+    color: white;
+    padding: 30px 70px; /* Increase padding for bigger buttons */
+    border: none;
+    border-radius: 50px;
+    margin: 0px;
+    cursor: pointer;
+    font-size: 30px; 
+}
+
+
+
+
+
