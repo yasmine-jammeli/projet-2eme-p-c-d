@@ -1,0 +1,47 @@
+.content-container {
+    height: 800px; /* Adjust height as needed */
+    overflow-y: auto;
+  }
+  
+
+.header {
+    background-color: #317A88;
+    height: 120px;
+    display: flex; /* Add display: flex; */
+    justify-content: center; /* Add justify-content: center; */
+    align-items: center; /* Optional: to horizontally center the content */
+}
+
+.header h1 {
+    color: white;
+}
+
+.content{
+    margin-top: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.note{
+    font-size: 16px;
+    color: #5D5D60;
+    font-family: 'Abel', sans-serif; /* Assuming "Abel" is available as a web font */
+}
+
+.notice{
+    display: flex;
+    margin-bottom: 30px;
+    border: solid;
+    border-width: 1px;
+}
+.txt{
+    font-size: 20px;
+    margin-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.icon{
+    background-color: #F13E3E;
+    width: 400px;
+    height: 200px;
+}
