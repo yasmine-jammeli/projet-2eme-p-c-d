@@ -1,0 +1,4 @@
+ cd pcd      
+  npm install 
+  npm run dev 
+  
