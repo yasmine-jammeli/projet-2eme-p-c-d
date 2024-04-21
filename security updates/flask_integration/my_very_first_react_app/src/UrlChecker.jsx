@@ -1,67 +1,50 @@
-// UrlChecker.jsx
 import React, { useState } from 'react';
-import './UrlChecker.css'; // Import CSS file for styling
 
-function UrlChecker() {
+const UrlChecker = () => {
   const [url, setUrl] = useState('');
-  const [isValid, setIsValid] = useState(null);
+  const [prediction, setPrediction] = useState(null);
+  const [error, setError] = useState(null);
 
-  const handleInputChange = (e) => {
-    setUrl(e.target.value);
-  };
-
-  const handleCheckUrl = () => {
-    if (isValidUrl(url)) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
-  };
-
-  const isValidUrl = (url) => {
+  const handlePredict = async () => {
     try {
-      new URL(url);
-      return true;
+      const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      setPrediction(data.prediction);
+      setError(null);
     } catch (error) {
-      return false;
+      setError(error.message);
+      setPrediction(null);
     }
   };
 
   return (
-    <div className="url-checker-container">
-      <h1 className="title">URL Checker</h1>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>URL Checker</h1>
       <input
         type="text"
-        placeholder="Enter URL"
         value={url}
-        onChange={handleInputChange}
-        className="url-input"
+        onChange={(e) => setUrl(e.target.value)}
+        placeholder="Enter URL"
+        style={{ margin: '10px' }}
       />
-      <button onClick={handleCheckUrl} className="check-button">
-        Check URL
-      </button>
-      {isValid !== null && (
-        <p className={isValid ? 'valid-message' : 'invalid-message'}>
-          {isValid ? 'Valid URL' : 'Invalid URL'}
-        </p>
-      )}
+      <br />
+      <button onClick={handlePredict}>Check URL</button>
+      <br />
+      {prediction !== null && <p>Prediction: {prediction}</p>}
+      {error && <p>Error: {error}</p>}
     </div>
   );
-}
+};
 
 export default UrlChecker;
-
-/*/// App.jsx
-import React from 'react';
-import UrlChecker from './UrlChecker';
-
-function App() {
-  return (
-    <div>
-      <UrlChecker />
-    </div>
-  );
-}
-
-export default App;
-*/

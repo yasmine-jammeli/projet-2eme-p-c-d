@@ -9,7 +9,7 @@ app = Flask(__name__)
 llm = ChatGoogleGenerativeAI(model="gemini-pro",
                              verbose=True,
                              temperature=0.6,
-                             google_api_key="AIzaSyDbGYNDqpoqxxML3CteXAMUNMbAV8ucJI8")
+                             google_api_key="AIzaSyDREFwVhqxVObm6zeRCYrheoYRh2Q4y1fc")
 
 search_tool = DuckDuckGoSearchRun()
 researcher = Agent(
