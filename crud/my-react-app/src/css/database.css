@@ -54,18 +54,26 @@
   display: flex;
   width: 100%;
 }
+.main-top h1{
+  margin-left: 10px;
+  margin-top: 10px;
+}
 
-.add-icon{
+.add-icon {
   position: absolute;
   right: 0;
-  margin: 10px 30px;
+  margin: 30px 30px;
   color: rgb(110, 109, 109);
   cursor: pointer;
+  font-size: 3rem !important; /* Adjust the font size as needed */
 }
+
+
 .delete-icon{
   margin-left: 10px;
 
 }
+
 
 
 /*Employee List serction  */
@@ -94,13 +102,19 @@ table thead tr{
   background: #34AF6D;
   text-align: left;
   font-weight: bold;
+  text-align: center; /* Center align the content of the table */
 }
 .table th,
 .table td{
   padding: 12px 15px;
+  align-content: center;
+  align-items: center;
 }
+
+
 .table tbody tr{
   border-bottom: 1px solid #ddd;
+  
 }
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
@@ -117,10 +131,71 @@ table thead tr{
   border-radius: 10px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #4AD489;
 }
 .table button:hover{
   background: #4AD489;
   color: #fff;
   transition: 0.5rem;
+}
+
+
+/* pop up */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  background: #fff;
+  width: 30%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Apply a backdrop filter to create the blur effect */
+.employee-list {
+  backdrop-filter: blur(5px);
+}
+
+/* Style for the form labels */
+.popup-inner label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Style for the form inputs */
+.popup-inner input[type="text"],
+.popup-inner input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Style for the buttons */
+.popup-inner button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.popup-inner button.save {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.popup-inner button.cancel {
+  background-color: #f44336; /* Red */
+  color: white;
 }

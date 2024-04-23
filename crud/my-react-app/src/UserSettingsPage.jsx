@@ -5,9 +5,9 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import MenuListUser from './components/menulistuser';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import Logo from './assets/logo.png'
-import MyAccountUser from './components/MyAccountUser';
-
 const { Header, Sider } = Layout;
+import UserSettings from './components/UserSettings';
+
 
 const UserSettingsPage = () => {
   const [darkTheme, setDarkTheme] = useState(true);
@@ -44,8 +44,8 @@ const UserSettingsPage = () => {
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             />
           </Header>
-          <MyAccountUser/>
-        </Layout>
+<UserSettings/>       
+            </Layout>
       </Layout>
     </div>
   );

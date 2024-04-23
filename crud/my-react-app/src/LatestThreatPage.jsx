@@ -5,7 +5,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import MenuListUser from './components/menulistuser';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import Logo from './assets/logo.png'
-import CrewAi from './components/CrewAi';
+import DailyUpdate from './components/DailyUpdate';
 
 const { Header, Sider } = Layout;
 
@@ -45,8 +45,7 @@ const LatestThreatPage = () => {
             />
           </Header>
           <div className="scrollable-content">
-            <CrewAi />
-          </div>
+<DailyUpdate/>          </div>
         </Layout>
       </Layout>
     </div>
