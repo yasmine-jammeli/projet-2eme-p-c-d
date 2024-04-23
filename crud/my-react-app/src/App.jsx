@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import SignInPage from './SignInPage';
 import SignUpPage from './SignUpPage';
@@ -10,6 +9,9 @@ import UserSettingsPage from './UserSettingsPage';
 import AdminSettingsPage from './AdminSettingsPage';
 import DashboardPage from './DashboardPage';
 import LatestThreatPage from './LatestThreatPage';
+import ChatPage from './ChatPage';
+import EmailCheckerPage from './EmailCheckerPage';
+import URLCheckerPage from './URLCheckerPage';
 
 
 function App() {
@@ -26,6 +28,10 @@ function App() {
 <Route path='/admin_settings' element={<AdminSettingsPage/>}></Route>
 <Route path='/dashboard' element={<DashboardPage/>}></Route>
 <Route path='/latestthreat' element={<LatestThreatPage/>}></Route>
+<Route path='/chat' element={<ChatPage/>}></Route>
+<Route path='/email' element={<EmailCheckerPage/>}></Route>
+<Route path='/url' element={<URLCheckerPage/>}></Route>
+
   </Routes>
   </BrowserRouter>
   );

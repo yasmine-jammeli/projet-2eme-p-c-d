@@ -24,10 +24,10 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [emailError, setEmailError] = useState<string | null>(null);
-  const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [Email, setEmail] = useState<string>('');
+  const [Password, setPassword] = useState<string>('');
+  const [EmailError, setEmailError] = useState<string | null>(null);
+  const [PasswordError, setPasswordError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ export default function SignUp() {
       return;
     }
     axios
-      .post('http://localhost:3002/login', { email, password })
+      .post('http://localhost:3002/login', { Email, Password })
       .then((result) => {
         console.log(result);
         const message = result.data;
@@ -50,16 +50,16 @@ export default function SignUp() {
 
   const validateForm = () => {
     let valid = true;
-    if (!email) {
+    if (!Email) {
       setEmailError('Email is required');
       valid = false;
-    } else if (!emailRegex.test(email)) {
+    } else if (!emailRegex.test(Email)) {
       setEmailError('Invalid email format');
       valid = false;
     } else {
       setEmailError(null);
     }
-    if (!password) {
+    if (!Password) {
       setPasswordError('Password is required');
       valid = false;
     } else {
@@ -68,6 +68,9 @@ export default function SignUp() {
     return valid;
   };
 
+  const handleSignUpClick = () => {
+    navigate('/register');
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -96,10 +99,10 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
-                  value={email}
+                  value={Email}
                   onChange={(e) => setEmail(e.target.value)}
-                  error={!!emailError}
-                  helperText={emailError}
+                  error={!!EmailError}
+                  helperText={EmailError}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -111,10 +114,10 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  value={password}
+                  value={Password}
                   onChange={(e) => setPassword(e.target.value)}
-                  error={!!passwordError}
-                  helperText={passwordError}
+                  error={!!PasswordError}
+                  helperText={PasswordError}
                 />
               </Grid>
               <Grid container justifyContent="right">
@@ -125,15 +128,27 @@ export default function SignUp() {
                 </Typography>
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              style={{ backgroundColor: '#BE4A31', color: '#FFFFFF' }}
-            >
-              Sign In
-            </Button>
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+  <Button
+    fullWidth
+    color="primary"
+    variant="outlined"
+    sx={{ mt: 3, mb: 2, width: 'calc(50% - 5px)' }} // 5px accounts for margin
+    onClick={handleSignUpClick}
+  >
+    Sign Up instead
+  </Button>
+  <Button
+    type="submit"
+    fullWidth
+    variant="contained"
+    style={{ backgroundColor: '#BE4A31', color: '#FFFFFF' }}
+    sx={{ mt: 3, mb: 2, width: 'calc(50% - 5px)' }} // 5px accounts for margin
+  >
+    Sign In
+  </Button>
+</div>
+        
           </Box>
         </Box>
         <Footer />
