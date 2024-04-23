@@ -1,5 +1,0 @@
-Subject,Sender,Time,Body,Attachments,Predicted_Label
-spam,test_pcd@outlook.fr,2024-04-21 20:39:31,"spam
-",,Not Spam
-congrats,test_pcd@outlook.fr,2024-04-21 20:47:57,"Congrats you win free money
-",,Not Spam
